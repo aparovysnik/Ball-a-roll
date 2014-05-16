@@ -8,19 +8,19 @@ Minimum requirements
 --Separate BulletPhysics installation may be required
 
 PLUS:
---A computer
---A display
---One hand
---Some sort of a keyboard
---One eye
+A computer
+A display
+One hand
+Some sort of a keyboard
+One eye
 
 Recommended specifications
 ===========
---A good computer
---A working display
---1.5 - 2 hands
---Keyboard with less than 50% of a pizza stuck in it
---2 eyes + maybe another 2, just in case
+A good computer
+A working display
+1.5 - 2 hands
+Keyboard with less than 50% of a pizza stuck in it
+2 eyes + maybe another 2, just in case
 
 Controls
 ===========
