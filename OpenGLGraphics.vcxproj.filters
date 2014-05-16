@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{a7526246-0601-4548-a76b-1b25060e7785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{bc44701c-3489-4907-b7b9-c9344d031745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Text">
+      <UniqueIdentifier>{db48f527-f4cc-4003-9622-ef8cd8d7767f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Text">
+      <UniqueIdentifier>{00a71c19-8d04-40b0-ad92-c5aa75942c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game entities">
+      <UniqueIdentifier>{dded40b1-e7ee-44b7-ad6e-446438e812e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game entities\Graphics">
+      <UniqueIdentifier>{c2b97d99-dac6-4f3b-a8dc-69be170121f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game entities\Graphics\Menu">
+      <UniqueIdentifier>{1f10b8f5-9554-4641-89e5-8fe500a8f622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game entities\Physics">
+      <UniqueIdentifier>{cbdb3377-4bd1-4a63-97f6-91ea9b779092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{d7d8e136-a076-4077-a0e0-22463c9282be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{5a5f05b8-fada-4162-9f83-c53707e4d686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Templates">
+      <UniqueIdentifier>{f4c335aa-2347-4963-9401-8ca23d9d4d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Environment">
+      <UniqueIdentifier>{4b294b28-ae52-4418-8771-1c58fd38ff83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Environment">
+      <UniqueIdentifier>{39909e9d-0eaa-46f0-92d8-fa201b523d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{259f2d8f-6bfb-4346-81cf-352016bbebfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{8c6474f4-3bc8-46e6-8c25-c6535952400d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game states">
+      <UniqueIdentifier>{47dd26af-eeed-4330-92cd-c2ea5bf2b5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game states">
+      <UniqueIdentifier>{30a045ce-6e1a-4898-b551-4f1dc7d73aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game entities">
+      <UniqueIdentifier>{0a969043-0e21-4e01-92d3-3c6f6cf2b18a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game entities\Graphics">
+      <UniqueIdentifier>{04366aac-c992-484b-82cf-76b5be76638c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game entities\Graphics\Menu">
+      <UniqueIdentifier>{faca2aa2-02ac-4870-8f1f-6cb3eff0f657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game entities\Physics">
+      <UniqueIdentifier>{97ca3766-424b-49b5-b489-ea1c51d9745b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files\Game entities\Graphics\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEffectResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="MusicResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="LFont.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="LSpriteSheet.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="LTexture.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsContainer.cpp">
+      <Filter>Source Files\Game entities\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuButton.cpp">
+      <Filter>Source Files\Game entities\Graphics\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Game entities\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderObject.cpp">
+      <Filter>Source Files\Game entities\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>Source Files\Game entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\Game entities\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Game entities\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Source Files\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApplication.cpp">
+      <Filter>Source Files\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfileSample.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsObject.cpp">
+      <Filter>Source Files\Game entities\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files\Game entities\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllableObject.cpp">
+      <Filter>Source Files\Game entities\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogic.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOnState.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverState.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePausedState.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSetupState.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWonState.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="PlainObject.cpp">
+      <Filter>Source Files\Game entities\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Source Files\Game states</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LFont.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LFRect.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LOpenGL.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LSpriteSheet.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LTexCoord.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LTexture.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LVertexData2D.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="LVertexPos2D.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files\Game entities\Graphics\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuButton.h">
+      <Filter>Header Files\Game entities\Graphics\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MusicResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffectResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsContainer.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\Game entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectTypes.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderObject.h">
+      <Filter>Header Files\Game entities\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\Game entities\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files\Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="OctreeNode.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\Game entities\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Game entities\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApplication.h">
+      <Filter>Header Files\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Header Files\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="EmbeddedResources.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfileLogHandler.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="IProfilerOutputHandler.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfileSample.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsObject.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="btClosestBodyDetector.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllableObject.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOnState.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePausedState.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSetupState.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWonState.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameLogic.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="IStateMachine.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsTypes.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PlainObject.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextObject.h">
+      <Filter>Header Files\Game entities\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Header Files\Game states</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGLGraphics.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
