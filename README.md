@@ -29,13 +29,21 @@ The UI is currently very basic. The main menu is controlled using left mouse but
 Gameplay controls:
 
 W - roll forward
+
 S - roll backward
+
 A - turn leftward
+
 D - turn rightward
+
 LEFT ARROW - roll left
+
 RIGHT ARROW - roll right
+
 SPACE - jump
+
 ESC - pause
+
 R - restart
 
 Gameplay
