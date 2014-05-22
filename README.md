@@ -61,6 +61,6 @@ This software features code from NCLGL framework developed by Richard Davison.
 The music used in the software is licensed under Creative Commons licenses and is performed by:
 
 
-Andrea Barone - Its like a Movie
-Butterfly Tea - Butterfly Odyssey 2013
-Tryad - Lovely
+* Andrea Barone - Its like a Movie
+* Butterfly Tea - Butterfly Odyssey 2013
+* Tryad - Lovely
