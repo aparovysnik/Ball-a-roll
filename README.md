@@ -50,9 +50,9 @@ Legal stuff
 This software uses SDL, FreeType and Bullet Physics libraries licensed under respective licenses available at:
 
 
-https://www.libsdl.org/license.php
-http://www.freetype.org/license.html
-http://bulletphysics.org/mediawiki-1.5.8/index.php/LICENSE
+* https://www.libsdl.org/license.php
+* http://www.freetype.org/license.html
+* http://bulletphysics.org/mediawiki-1.5.8/index.php/LICENSE
 
 
 This software features code from NCLGL framework developed by Richard Davison.
