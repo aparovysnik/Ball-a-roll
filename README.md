@@ -45,6 +45,10 @@ Gameplay
 ===========
 The main goal of the player is to roll the ball to the end of the track without falling off.
 
+Release
+===========
+A release build is available in Release/OpenGLGraphics.exe .
+
 Legal stuff
 ===========
 This software uses SDL, FreeType and Bullet Physics libraries licensed under respective licenses available at:
