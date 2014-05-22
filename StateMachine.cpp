@@ -40,7 +40,7 @@ bool StateMachine::RemoveState(string state)
 	return false;
 }
 
-bool StateMachine::AddTransition(string from, string to, std::function<bool()> fptr)
+bool StateMachine::AddTransition(string from, string to, bool reinit, std::function<bool()> fptr)
 {
 	if (!(ContainsState(from) && ContainsState(to)))
 	{
@@ -48,7 +48,7 @@ bool StateMachine::AddTransition(string from, string to, std::function<bool()> f
 	}
 	else
 	{
-		return mStates[from]->AddTransition(mStates[to], fptr);
+		return mStates[from]->AddTransition(mStates[to], reinit, fptr);
 	}
 }
 
@@ -108,7 +108,9 @@ bool StateMachine::Advance(string nextState)
 		}
 		}*/
 	{
-		mStates[nextState]->SetRunning();
+		if (nextState.compare("GAME_PAUSED") != 0)
+			mCurrent->Stop();
+		mStates[nextState]->SetRunning(mCurrent->GetTransitionInitSettings(mStates[nextState]));
 		mCurrent = mStates[nextState];
 		return true;
 	}
@@ -121,7 +123,7 @@ bool StateMachine::Start(string name)
 	if (ContainsState(name))
 	{
 		mCurrent = mStates[name];
-		mCurrent->SetRunning();
+		mCurrent->SetRunning(false);
 		return true;
 	}
 	return false;

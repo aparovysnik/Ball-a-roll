@@ -54,7 +54,10 @@ bool LevelResource::Load(const string& addr)
 		while (infile)
 		{
 			if (!getline(infile, s))
+			{
+				cout << "Loaded level!" << endl;
 				return true;
+			}
 
 			istringstream stream(s);
 			vector <string> record;
@@ -306,6 +309,8 @@ bool LevelResource::Load(const string& addr)
 	{
 		return false;
 	}
+	cout << "Loaded level!" << endl;
+	return true;
 }
 bool LevelResource::GetValue(istringstream &stream, string& s, string addr)
 {

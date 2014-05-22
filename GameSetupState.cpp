@@ -16,9 +16,9 @@ GameSetupState::~GameSetupState()
 {
 }
 
-void GameSetupState::SetRunning()
+void GameSetupState::SetRunning(bool reinit)
 {
-	cout << "Setup starts!" << endl;
+	State::SetRunning(reinit);
 	Application::Instance().SetEnvironment(mName);
 }
 
@@ -40,14 +40,20 @@ void GameSetupState::Init()
 	menu->AddButton(m, buttonPosition, buttonScale, bgShader, txtShader, btnPress, bgFont, text, btnBg->GetTextureID());
 	GameEntity* ent = new GameEntity(menu);
 	environment->AddEntity(ent, false);
+
+	State::Init();
 }
 
 void GameSetupState::Run()
 {
 }
 
+void GameSetupState::Stop()
+{
+
+}
+
 void GameSetupState::ButtonPlay_Pressed(int i)
 {
-	cout << "Button index is: " << i << endl;
 	StateMachine::Instance().Advance("GAME_ON");
 }

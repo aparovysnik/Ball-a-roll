@@ -29,7 +29,6 @@ public:
 	{
 		btVector3 v = body->getAngularVelocity();
 		btVector3 v1 = body->getLinearVelocity();
-		//cout << v1.x() << " " << v1.y() << " " << v1.z() << endl;
 		return positions.at(positions.size() - 1) - positions.at(positions.size() - 2);
 	}
 

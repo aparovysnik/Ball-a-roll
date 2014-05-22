@@ -19,8 +19,12 @@ GameOverState::~GameOverState()
 {
 }
 
-void GameOverState::SetRunning()
+void GameOverState::SetRunning(bool reinit)
 {
+	State::SetRunning(reinit);
+	mus = ResourceManager::Instance().GetResource<MusicResource>("Tryad - Lovely.mp3");
+	mus->Play();
+
 	textShader = ResourceManager::Instance().GetResource<ShaderResource>("testvert.glsl,testFragTex.glsl")->GetShader();
 	Vector3 camOrigin = physics->GetCamObjectOrigin();
 	Vector3 camDirection = renderer->GetCamDirection();
@@ -47,6 +51,13 @@ void GameOverState::Run()
 {
 }
 
+void GameOverState::Stop()
+{
+	renderer->RotateCamera(0);
+	mus->Stop();
+}
+
 void GameOverState::Init()
 {
+	State::Init();
 }

@@ -30,11 +30,11 @@ bool MusicResource::Play()
 		//Play the music
 		if (Mix_PlayMusic(music, -1) == -1)
 		{
-			isPlaying = true;
-			return true;
+			return false;
 		}
 	}
-	return false;
+	isPlaying = true;
+	return true;
 }
 
 bool MusicResource::Stop()

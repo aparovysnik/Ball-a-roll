@@ -29,8 +29,10 @@ LFont::LFont()
 	mSpace = 0.f;
 	mLineHeight = 0.f;
 	mNewLine = 0.f;
-	Vector4 c[] = { Vector4(1, 1, 1, 1), Vector4(1, 1, 1, 1), Vector4(1, 1, 1, 1), Vector4(1, 1, 1, 1) };
-	std::copy(colour + 0, colour + 4, c);
+	colour[0] = Vector4(1, 1, 1, 1);
+	colour[1] = Vector4(1, 1, 1, 1);
+	colour[2] = Vector4(1, 1, 1, 1);
+	colour[3] = Vector4(1, 1, 1, 1);
 }
 
 LFont::~LFont()
@@ -243,7 +245,11 @@ LFont::~LFont()
 
 bool LFont::loadFreeType( std::string path, GLuint pixelSize, int shrinkRate, Vector4 col[4])
 {
-	memcpy(colour, col, sizeof(Vector4) * 4);
+	colour[0] = col[0];
+	colour[1] = col[1];
+	colour[2] = col[2];
+	colour[3] = col[3];
+	//memcpy(colour, col, sizeof(Vector4) * 4);
 	mShrinkRate = shrinkRate;
     //Error flag
     FT_Error error = NULL;
@@ -347,7 +353,7 @@ bool LFont::loadFreeType( std::string path, GLuint pixelSize, int shrinkRate, Ve
                     nextClip.h = cellH;
 
                     //Blit character
-                    bitmaps[ currentChar ].blitPixels8( bX, bY + maxBearing - metrics[ currentChar ].horiBearingY / 64, *this );
+                    bitmaps[ currentChar ].blitPixels8( bX, bY + maxBearing - metrics[ currentChar ].horiBearingY / 64, this );
 
                     //Go to the next character
                     mClips.push_back( nextClip );

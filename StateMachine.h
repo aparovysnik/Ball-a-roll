@@ -27,7 +27,7 @@ public:
 
 	virtual bool RemoveState(string state);
 
-	virtual bool AddTransition(string from, string to, std::function<bool()> fptr);
+	virtual bool AddTransition(string from, string to, bool reinit, std::function<bool()> fptr);
 
 	virtual bool RemoveTransition(string rem, string from);
 
@@ -45,7 +45,7 @@ public:
 	
 	bool IsComplete();
 protected:
-	StateMachine() {};
+	StateMachine() { mExit = NULL; }
 	virtual ~StateMachine() {
 		if (mCurrent != NULL)
 			delete mCurrent;

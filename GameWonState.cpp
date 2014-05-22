@@ -17,8 +17,12 @@ GameWonState::~GameWonState()
 {
 }
 
-void GameWonState::SetRunning()
+void GameWonState::SetRunning(bool reinit)
 {
+	State::SetRunning(reinit);
+	mus = ResourceManager::Instance().GetResource<MusicResource>("Butterfly Tea - Butterfly Odyssey 2013.mp3");
+	mus->Play();
+
 	textShader = ResourceManager::Instance().GetResource<ShaderResource>("testvert.glsl,testFragTex.glsl")->GetShader();
 	Vector3 camOrigin = physics->GetCamObjectOrigin();
 	Vector3 camDirection = renderer->GetCamDirection();
@@ -46,6 +50,13 @@ void GameWonState::Run()
 {
 }
 
+void GameWonState::Stop()
+{
+	renderer->RotateCamera(0);
+	mus->Stop();
+}
+
 void GameWonState::Init()
 {
+	State::Init();
 }

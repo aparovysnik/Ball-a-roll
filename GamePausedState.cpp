@@ -15,8 +15,10 @@ GamePausedState::~GamePausedState()
 {
 }
 
-void GamePausedState::SetRunning()
+void GamePausedState::SetRunning(bool reinit)
 {
+	State::SetRunning(reinit);
+
 	this->environment = GameApplication::Instance().DuplicateEnvironment(mName);
 	this->environment->RemoveBodies();
 
@@ -30,7 +32,6 @@ void GamePausedState::SetRunning()
 			if (rObj->HasTexture())
 			{
 				rObj->SetShader(dTexture);
-				cout << "Has Texture!" << endl;
 			}
 			else
 			{
@@ -58,13 +59,18 @@ void GamePausedState::SetRunning()
 	c->DeactivateAction(TURN_CAM_LEFT, LOCAL);
 	c->DeactivateAction(TURN_CAM_RIGHT, GLOBAL);
 	c->DeactivateAction(TURN_CAM_RIGHT, LOCAL);
-
 }
 void GamePausedState::Run()
 {
 
 }
 
+void GamePausedState::Stop()
+{
+
+}
+
 void GamePausedState::Init()
 {
+	State::Init();
 }

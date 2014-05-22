@@ -10,6 +10,11 @@ Environment::~Environment()
 	delete dispatcher;
 	delete collisionConfiguration;
 	delete broadphase;
+
+	for each (GameEntity* ent in entities)
+	{
+		delete ent;
+	}
 }
 
 void Environment::AddEntity(GameEntity* ent, bool transparent)

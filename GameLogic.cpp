@@ -68,14 +68,16 @@ void GameLogic::Init()
 	stateMachine->AddState(test4);
 
 	std::function<bool()> transition = std::bind(&GameLogic::GameOnToGamePaused, this);
-	stateMachine->AddTransition("GAME_ON", "GAME_PAUSED", transition);
-	stateMachine->AddTransition("GAME_PAUSED", "GAME_ON", transition);
+	stateMachine->AddTransition("GAME_ON", "GAME_PAUSED", false, transition);
+	stateMachine->AddTransition("GAME_PAUSED", "GAME_ON", false, transition);
 	transition = std::bind(&GameLogic::GameOnToGameOver, this);
-	stateMachine->AddTransition("GAME_ON", "GAME_OVER", transition);
+	stateMachine->AddTransition("GAME_ON", "GAME_OVER", false, transition);
 	transition = std::bind(&GameLogic::GameOnToGameWon, this);
-	stateMachine->AddTransition("GAME_ON", "GAME_WON", transition);
+	stateMachine->AddTransition("GAME_ON", "GAME_WON", false, transition);
 	transition = std::bind(&GameLogic::GameOnToGameSetup, this);
-	stateMachine->AddTransition("GAME_ON", "GAME_SETUP", transition);
+	stateMachine->AddTransition("GAME_ON", "GAME_SETUP", false, transition);
+	stateMachine->AddTransition("GAME_OVER", "GAME_SETUP", false, transition);
+	stateMachine->AddTransition("GAME_WON", "GAME_SETUP", false, transition);
 	stateMachine->Start("GAME_SETUP");
 }
 

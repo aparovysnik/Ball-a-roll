@@ -33,8 +33,7 @@ void GameApplication::Run()
 	//ProfileSample* p = new ProfileSample("Main loop");
 
 	//ProfileSample* p0 = new ProfileSample("Logic update");
-	//Update game logic
-	logic->Update();
+
 	//delete p0;
 	// rendering stuff down here
 
@@ -42,6 +41,9 @@ void GameApplication::Run()
 	//ProfileSample* p1 = new ProfileSample("Physics update");
 	physics->UpdateScene(t);
 	//delete p1;
+
+	//Update game logic
+	logic->Update();
 
 	//Update graphics
 	//ProfileSample* p2 = new ProfileSample("Graphics update");
@@ -82,9 +84,11 @@ void GameApplication::Init()
 	}
 	//Create and get reference to game logic container
 	GLubyte* pixels = new GLubyte[8];
+	renderer->RenderScene();
 	GameLogic::Create();
 
 	logic = &GameLogic::Instance();
+	renderer->RenderScene();
 
 	renderer->SetProjectionMatrix(Matrix4::Perspective(1.0f, 10000, window->GetScreenSize().x / window->GetScreenSize().y, 45));
 	renderer->SetViewMatrix(Matrix4::Translation(Vector3(0, 0, 0)));
@@ -92,6 +96,5 @@ void GameApplication::Init()
 	Shader* s2 = ResourceManager::Instance().GetResource<ShaderResource>("testvert.glsl,testFragTex.glsl")->GetShader();
 	ProfileSample::shader = s2;
 	Vector4 col[4] = { Vector4(0.7, 0, 0.5, 1.0), Vector4(0.7, 0, 0.5, 1.0), Vector4(0.7, 0, 0.5, 1.0), Vector4(0.3, 0.2, 0.5, 1.0) };
-	GLubyte* pixels1 = new GLubyte[8];
 	//appFont = LoadTrueTypeFont("arial.ttf", 700, 32, col);
 }

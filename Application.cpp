@@ -74,6 +74,7 @@ void Application::Stop()
 Environment* Application::CreateEnvironment(string name)
 {
 	env = new Environment(env->GetCapacity(), env->GetOrigin(), env->GetHalfDimension());
+	envs.erase(name);
 	envs.insert(pair<string, Environment*>(name, env));
 	return env;
 }
@@ -87,6 +88,7 @@ Environment* Application::DuplicateEnvironment(string newName)
 Environment* Application::CreateEnvironment(const string &name, unsigned int maxCapacity, Vector3 origin, Vector3 halfDim)
 {
 	env = new Environment(maxCapacity, origin, halfDim);
+	envs.erase(name);
 	envs.insert(pair<string, Environment*>(name, env));
 	return env;
 }
@@ -96,8 +98,8 @@ void Application::SetEnvironment(const string &name)
 	if (envs[name] != NULL)
 	{
 		env = envs[name];
-		cout << "Environment set: " << env->GetEntities().size() << endl;
 		renderer->SetEnvironment(env);
+		renderer->Reset();
 		physics->SetEnvironment(env);
 	}
 	cout << "Environment setup complete." << endl;

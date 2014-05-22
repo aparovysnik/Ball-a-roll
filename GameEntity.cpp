@@ -1,7 +1,7 @@
 #include "GameEntity.h"
 #include "PlainObject.h"
 #include "ControllableObject.h"
-#include "../nclgl/Matrix3.h"
+#include "nclgl/Matrix3.h"
 
 void GameEntity::AssignPhysics(btRigidBody* body, Vector3 position, Game::Material material, Game::Type type)
 {

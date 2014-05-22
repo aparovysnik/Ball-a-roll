@@ -8,10 +8,12 @@ public:
 	GameOverState(string mName, string mDescription);
 	~GameOverState();
 
-	void SetRunning();
+	void SetRunning(bool reinit);
 
 	void Init();
 	void Run();
+
+	void Stop();
 
 private:
 	MusicResource* mus;

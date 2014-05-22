@@ -1,5 +1,5 @@
 #pragma once
-#include "../nclgl/Vector3.h"
+#include "nclgl/Vector3.h"
 
 struct BoundingBox {
 	BoundingBox()

@@ -21,7 +21,7 @@ PhysicsObject::PhysicsObject(btRigidBody* body, Vector3 position, BoundingBox bB
 	positions.push_back(position);
 	btTransform transform;
 	body->getMotionState()->getWorldTransform(transform);
-	cout << transform.getRotation();
+
 	rotation = new btQuaternion(transform.getRotation());
 	initialRotation = new btQuaternion(transform.getRotation());
 	vPos.current = Vector3(position);

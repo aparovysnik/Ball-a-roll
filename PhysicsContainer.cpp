@@ -27,7 +27,6 @@ void PhysicsContainer::UpdateScene(float msec)
 	//Timer t;
 	//t.StartTimer();
 	dynamicsWorld->stepSimulation(1 / 60.f, 10);
-	//cout << "Dynamics world update takes " << t.GetFrameTime() << "ms" << endl;
 	environment->begin();
 	GameEntity *entity = environment->GetNextEntity();
 	set<Action> objectActions = Controller::Instance().GetLocalActions();

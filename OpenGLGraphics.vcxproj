@@ -39,12 +39,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\BulletPhysics-2.82\src;..\SDL2_mixer-2.0.0\include;..\SDL2_image-2.0.0\include;..\SDL2-2.0.1\include;..\GLEW\include;..\SOIL;..\freetype-2.4.11\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\SDL2_mixer-2.0.0\lib\x86;..\SDL2_image-2.0.0\lib\x86;..\SDL2-2.0.1\lib\x86;..\GLEW\lib\$(Configuration);..\SOIL\$(Configuration);.\$(Configuration);..\freetype-2.4.11\objs\win32\vc2010;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\BulletPhysics-2.82\src;SDL2_mixer-2.0.0\include;SDL2_image-2.0.0\include;SDL2-2.0.1\include;GLEW\include;SOIL;freetype-2.4.11\include;$(IncludePath)</IncludePath>
+    <LibraryPath>SDL2_mixer-2.0.0\lib\x86;SDL2_image-2.0.0\lib\x86;SDL2-2.0.1\lib\x86;GLEW\lib\$(Configuration);SOIL\$(Configuration);.\$(Configuration);freetype-2.4.11\objs\win32\vc2010;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\BulletPhysics-2.82\src;..\SDL2_image-2.0.0\include;..\SDL2_mixer-2.0.0\include;..\GLEW\include;..\SDL2-2.0.1\include;..\freetype-2.4.11\include;..\SOIL;$(IncludePath)</IncludePath>
-    <LibraryPath>..\SDL2_image-2.0.0\lib\x86;..\SDL2_mixer-2.0.0\lib\x86;..\freetype-2.4.11\objs\win32\vc2010;..\SDL2-2.0.1\lib\x86;..\GLEW\lib\$(Configuration);..\SDL2_image-2.0.0\lib\x86\;..\SOIL\Simple OpenGL Image Library\projects\VC9\Release;.\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\BulletPhysics-2.82\src;SDL2_image-2.0.0\include;SDL2_mixer-2.0.0\include;GLEW\include;SDL2-2.0.1\include;freetype-2.4.11\include;SOIL;$(IncludePath)</IncludePath>
+    <LibraryPath>SDL2_image-2.0.0\lib\x86;SDL2_mixer-2.0.0\lib\x86;freetype-2.4.11\objs\win32\vc2010;SDL2-2.0.1\lib\x86;GLEW\lib\$(Configuration);SDL2_image-2.0.0\lib\x86\;SOIL\Simple OpenGL Image Library\projects\VC9\Release;.\$(Configuration);$(LibraryPath)</LibraryPath>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

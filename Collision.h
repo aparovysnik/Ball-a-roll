@@ -2,7 +2,7 @@
 #ifndef COLLISION_H
 #define COLLISION_H
 #include <map>
-#include "../nclgl/Vector3.h"
+#include "nclgl/Vector3.h"
 namespace Game
 {
 	struct CollisionSettings

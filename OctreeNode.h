@@ -1,5 +1,5 @@
 #pragma once
-#include "../nclgl/Vector3.h"
+#include "nclgl/Vector3.h"
 #include "GameEntity.h"
 #include <vector>
 class OctreeNode

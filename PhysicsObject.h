@@ -1,6 +1,6 @@
 #pragma once
-#include "../nclgl/Vector2.h"
-#include "../nclgl/Vector3.h"
+#include "nclgl/Vector2.h"
+#include "nclgl/Vector3.h"
 #include "RenderObject.h"
 #include "ObjectTypes.h"
 #include "Timer.h"

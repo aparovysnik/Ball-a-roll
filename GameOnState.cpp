@@ -8,8 +8,8 @@ GameOnState::GameOnState(string mName, string mDescription) : State(mName, mDesc
 {
 	physics = &PhysicsContainer::Instance();
 	renderer = &Renderer::Instance();
-	this->environment = GameApplication::Instance().CreateEnvironment(mName);
 	mus = NULL;
+	environment = NULL;
 
 	Init();
 }
@@ -19,12 +19,14 @@ GameOnState::~GameOnState()
 {
 }
 
-void GameOnState::SetRunning()
+void GameOnState::SetRunning(bool reinit)
 {
+	State::SetRunning(reinit);
+
 	//Play or resume music
-	if (mus == NULL)
+	if (mus == NULL || reinit)
 	{
-		mus = ResourceManager::Instance().GetResource<MusicResource>("Chill Carrier - That Universe In My Barn.mp3");
+		mus = ResourceManager::Instance().GetResource<MusicResource>("Andrea Barone - Its like a Movie.mp3");
 		mus->Play();
 	}
 	else
@@ -55,8 +57,19 @@ void GameOnState::Run()
 
 }
 
+void GameOnState::Stop()
+{
+	mus->Stop();
+}
+
 void GameOnState::Init()
 {
+	if (environment != NULL)
+		delete environment;
+
+	this->environment = GameApplication::Instance().CreateEnvironment(mName);
+	
+	ResourceManager::Instance().FreeResource("level1.txt");
 	LevelResource* level = ResourceManager::Instance().GetResource<LevelResource>("level1.txt");
 	vector<LevelEntity*> entities = level->GetLevelEntities();
 	
@@ -65,6 +78,8 @@ void GameOnState::Init()
 		environment->AddEntity(ent->entity, ent->isTransparent);
 		environment->AddBody(ent->rigidBody);
 	}
+
+	State::Init();
 
 	/*Sample environment*/
 

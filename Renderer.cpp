@@ -5,6 +5,7 @@
 
 Renderer::Renderer(Window &parent, Environment* env) : CAM_MOVEMENT_RATE(0.4), INV_CAM_MOVEMENT_RATE(-0.4), ROTATION_RATE(1), INV_ROTATION_RATE(-1), OGLRenderer(parent)	{
 
+	reset = true;
 	Vector2 windowSize = parent.GetScreenSize();
 	this->orthoProj = Matrix4::Orthographic(-1, 1, windowSize.x, 0, windowSize.y, 0);
 	this->orthoView = Matrix4::Translation(Vector3(1, 0, -1));
@@ -161,6 +162,12 @@ void	Renderer::UpdateScene(float msec) {
 	{
 		Vector3 camMove = p->GetCamObjectVelocity();
 		camOrigin = p->GetCamObjectOrigin();
+		if (reset)
+		{
+			viewMatrix.ToIdentity();
+			viewMatrix.SetPositionVector(camOrigin.Inverse() - Vector3(0,5,30));
+			reset = false;
+		}
 		//Rotate to the direction the camera object is moving in
 		float angle = 0;
 		viewMatrix = viewMatrix * Matrix4::Translation((camMove).Inverse());

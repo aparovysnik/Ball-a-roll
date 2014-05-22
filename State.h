@@ -24,6 +24,7 @@ public:
 	/// <param name="mDescription">Text to display for this state</param>
 	State(string mName, string mDescription) : IState(mName, mDescription)
 	{
+		reinitialized = false;
 	}
 
 	virtual bool ContainsTransition(State* i)
@@ -34,6 +35,16 @@ public:
 	virtual string GetName() const
 	{
 		return mName;
+	}
+
+	virtual bool GetTransitionInitSettings(State* transition)
+	{
+		vector<State*>::iterator it = find(mNeighbors.begin(), mNeighbors.end(), transition);
+		if (it != mNeighbors.end())
+		{
+			return mInits.at(*(mInits.begin() + (it - mNeighbors.begin())));
+		}
+		return true;
 	}
 
 	virtual string TransitionTriggered()
@@ -54,11 +65,11 @@ public:
 	virtual void Run()
 	{
 		// We don't do any fancy stuff, just print out where we are
-		std::cout << "Old McDonalds had a farm eeeyaheeeyahooooh!" << endl;
 	}
 protected:
 	vector<State*> mNeighbors;
 	vector<std::function<bool()>> mConditions;
+	vector<bool> mInits;
 	Renderer* renderer;
 	PhysicsContainer* physics;
 	Environment* environment;
@@ -68,11 +79,12 @@ protected:
 		return environment;
 	}
 
-	virtual bool AddTransition(State* i, std::function<bool()> &fptr)
+	virtual bool AddTransition(State* i, bool reinit, std::function<bool()> &fptr)
 	{
 		if (find(mNeighbors.begin(), mNeighbors.end(), i) != mNeighbors.end())
 			return false;
 		mNeighbors.push_back(i);
+		mInits.push_back(reinit);
 		mConditions.push_back(fptr);
 		return true;
 	}
@@ -83,6 +95,7 @@ protected:
 		if (iter != mNeighbors.end())
 		{
 			mConditions.erase(mConditions.begin() + (iter - mNeighbors.begin()));
+			mInits.erase(mInits.begin() + (iter - mNeighbors.begin()));
 			mNeighbors.erase(iter);
 			return true;
 		}

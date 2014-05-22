@@ -1,6 +1,6 @@
 #pragma once
-#include "../nclgl/Window.h"
-#include "../nclgl/Keyboard.h"
+#include "nclgl/Window.h"
+#include "nclgl/Keyboard.h"
 #include "Controls.h"
 #include "Singleton.h"
 #include <map>

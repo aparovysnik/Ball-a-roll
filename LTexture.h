@@ -308,7 +308,7 @@ class LTexture
          -None
         */
 
-        void blitPixels8( GLuint x, GLuint y, LTexture& destination );
+        void blitPixels8( GLuint x, GLuint y, LTexture* destination );
         /*
         Pre Condition:
          -Available 8bit member and destination pixels

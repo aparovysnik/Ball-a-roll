@@ -1,5 +1,5 @@
 #pragma once
-#include "../nclgl/OGLRenderer.h"
+#include "nclgl/OGLRenderer.h"
 
 #include "RenderObject.h"
 #include "Controller.h"
@@ -56,6 +56,10 @@ public:
 	GLuint LoadTexture(string filename);
 	static void Create(Window w, Environment* env) { if (instance == NULL) { instance = new Renderer(w, env); } };
 	void SetEnvironment(Environment* env) { this->environment = env; };
+	void Reset()
+	{
+		reset = true;
+	}
 
 protected:
 
@@ -91,6 +95,8 @@ private:
 		else
 			return orthoView * orthoProj;
 	}
+
+	bool reset;
 
 };
 

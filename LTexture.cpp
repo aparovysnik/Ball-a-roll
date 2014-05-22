@@ -337,7 +337,7 @@ void LTexture::createPixels32( GLuint imgWidth, GLuint imgHeight )
         mImageWidth = imgWidth;
         mImageHeight = imgHeight;
         mTextureWidth = mImageWidth;
-        mTextureHeight = mImageWidth;
+        mTextureHeight = mImageHeight;
 
         //Set pixel formal
         mPixelFormat = GL_RGBA;
@@ -361,7 +361,7 @@ void LTexture::copyPixels32( GLuint* pixels, GLuint imgWidth, GLuint imgHeight )
         mImageWidth = imgWidth;
         mImageHeight = imgHeight;
         mTextureWidth = mImageWidth;
-        mTextureHeight = mImageWidth;
+        mTextureHeight = mImageHeight;
 
         //Set pixel format
         mPixelFormat = GL_RGBA;
@@ -475,9 +475,6 @@ void LTexture::padPixels32()
 
 bool LTexture::loadTextureFromPixels8()
 {
-    //Loading flag
-    bool success = true;
-
     //There is loaded pixels
     if( mTextureID == 0 && mPixels8 != NULL )
     {
@@ -498,15 +495,13 @@ bool LTexture::loadTextureFromPixels8()
         //Unbind texture
         glBindTexture( GL_TEXTURE_2D, NULL );
 
-            //Release pixels
-            delete[] mPixels8;
-            mPixels8 = NULL;
+        
 
-            //Generate VBO
-            initVBO();
+        //Generate VBO
+        //initVBO();
 
-            //Set pixel format
-            mPixelFormat = GL_ALPHA;
+        //Set pixel format
+        mPixelFormat = GL_RED;
     }
     //Error
     else
@@ -523,9 +518,15 @@ bool LTexture::loadTextureFromPixels8()
         {
             printf( "No pixels to create texture from!\n" );
         }
+		return false;
     }
-
-    return success;
+	//Release pixels
+	if (mPixels8 != NULL)
+	{
+		delete[] mPixels8;
+		mPixels8 = NULL;
+	}
+	return true;
 }
 
 void LTexture::createPixels8( GLuint imgWidth, GLuint imgHeight )
@@ -545,12 +546,10 @@ void LTexture::createPixels8( GLuint imgWidth, GLuint imgHeight )
         mImageWidth = imgWidth;
         mImageHeight = imgHeight;
         mTextureWidth = mImageWidth;
-        mTextureHeight = mImageWidth;
-
-		std::cout << mImageHeight << std::endl;
+        mTextureHeight = mImageHeight;
 
         //Set pixel format
-        mPixelFormat = GL_ALPHA;
+        mPixelFormat = GL_RED;
     }
 }
 
@@ -565,16 +564,16 @@ void LTexture::copyPixels8( GLubyte* pixels, GLuint imgWidth, GLuint imgHeight )
         //Copy pixels
         GLuint size = imgWidth * imgHeight;
         mPixels8 = new GLubyte[ size ];
-        memcpy( mPixels8, pixels, sizeof(GLubyte) * size );
+        memcpy( mPixels8, pixels, size );
 
         //Copy pixel data
         mImageWidth = imgWidth;
         mImageHeight = imgHeight;
         mTextureWidth = mImageWidth;
-        mTextureHeight = mImageWidth;
+        mTextureHeight = mImageHeight;
 
         //Set pixel format
-        mPixelFormat = GL_ALPHA;
+        mPixelFormat = GL_RED;
     }
 }
 
@@ -597,20 +596,21 @@ void LTexture::padPixels8()
             //Allocate pixels
             GLuint size = mTextureWidth * mTextureHeight;
             GLubyte* pixels = new GLubyte[ size ];
-			memset(pixels, 0, sizeof(GLubyte)* size);
+			//memset(pixels, 0, size);
+			for (int cnt = 0; cnt < size; cnt++)
+			{
+				pixels[cnt] = 0;
+			}
 
             //Copy pixels rows
-			std::cout << "Padding pixels" << std::endl;
-			std::cout << "Image height: " << mImageHeight << std::endl;
-            for( int i = 0; i < mImageHeight; ++i )
+
+            for( int i = 0; i < oTextureHeight; ++i )
             {
-				//std::cout << mPixels8[i * oTextureWidth] << std::endl;
-				//std::cout << "Success" << std::endl;
-                memcpy( &pixels[ i * mTextureWidth ], &mPixels8[ i * oTextureWidth ], mImageWidth );
+                memcpy(&pixels[ i * mTextureWidth ], &mPixels8[ i * oTextureWidth ], oTextureHeight );
             }
+			delete[] mPixels8;
 
             //Change pixels
-            delete[] mPixels8;
             mPixels8 = pixels;
         }
     }
@@ -659,7 +659,7 @@ bool LTexture::lock()
         {
             mPixels32 = new GLuint[ size ];
         }
-        else if( mPixelFormat == GL_ALPHA )
+        else if( mPixelFormat == GL_RED )
         {
             mPixels8 = new GLubyte[ size ];
         }
@@ -833,21 +833,17 @@ void LTexture::blitPixels32( GLuint x, GLuint y, LTexture& destination )
     }
 }
 
-void LTexture::blitPixels8( GLuint x, GLuint y, LTexture& destination )
+void LTexture::blitPixels8( GLuint x, GLuint y, LTexture *destination )
 {
     //There are pixels to blit
-    if( mPixels8 != NULL && destination.mPixels8 != NULL )
+    if( mPixels8 != NULL && destination->mPixels8 != NULL )
     {
         //Copy pixels rows
-        GLubyte* dPixels = destination.mPixels8;
+        GLubyte* dPixels = destination->mPixels8;
         GLubyte* sPixels = mPixels8;
         for( int i = 0; i < mImageHeight; ++i )
         {
-			if ((GLuint)((i + y) * destination.mTextureWidth + x) > (mImageHeight * mImageWidth))
-			{
-				//std::cout << "This does not look good! " << mImageHeight << std::endl;
-			}
-            memcpy( &dPixels[ ( i + y ) * destination.mTextureWidth + x ], &sPixels[ i * mTextureWidth ], mImageWidth );
+            memcpy( &dPixels[ ( i + y ) * destination->mTextureWidth + x ], &sPixels[ i * mTextureWidth ], mImageWidth );
         }
     }
 }

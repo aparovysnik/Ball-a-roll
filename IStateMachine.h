@@ -20,10 +20,17 @@ public:
 	virtual string GetName() const = 0;
 
 	//Pre configure on every run
-	virtual void SetRunning() = 0;
+	virtual void SetRunning(bool reinit)
+	{
+		if (reinit & !reinitialized)
+			Init();
+		reinitialized = false;
+	}
 
 	// Do something
 	virtual void Run() = 0;
+
+	virtual void Stop() = 0;
 
 
 	//Overloading output operator for convenient printing
@@ -35,7 +42,9 @@ protected:
 	string mName;
 	string mDescription;
 
-	virtual void Init() = 0;
+	bool reinitialized;
+
+	virtual void Init() { reinitialized = true; }
 };
 
 class IStateMachine
